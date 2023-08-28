@@ -24,7 +24,7 @@ write_files:
     owner: root:root
     permissions: '0644'
     content: |-
-      hcp_boundary_cluster_id = "${gateway_cluster_id}"
+      hcp_boundary_cluster_id = "${boundary_cluster_id}"
 
       listener "tcp" {
         address = "0.0.0.0:9202"
