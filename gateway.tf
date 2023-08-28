@@ -58,8 +58,9 @@ resource "azurerm_linux_virtual_machine" "gateway" {
   }
 
   user_data = base64encode(templatefile("${path.module}/files/cloud-config.yaml", {
-    activation_token = var.gateway_token
-    public_ip        = azurerm_public_ip.gateway.ip_address
-    tags             = jsonencode(["${var.name}"])
+    boundary_cluster_id = var.boundary_cluster_id
+    activation_token    = var.gateway_token
+    public_ip           = azurerm_public_ip.gateway.ip_address
+    tags                = jsonencode(["${var.name}"])
   }))
 }
