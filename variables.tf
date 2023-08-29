@@ -7,18 +7,18 @@ variable "name" {
 variable "location" {
   type        = string
   description = "The Azure region to deploy to."
+  default     = "eastus"
 }
 
 variable "network_cidr" {
   type        = string
-  description = "The CIDR block for the network."
+  description = "The CIDR block assigned by InfiniaML to this deployment."
 }
 
 variable "boundary_cluster_id" {
   type        = string
   description = "The ID of the Boundary cluster."
 }
-
 
 variable "gateway_token" {
   type        = string
