@@ -1,4 +1,5 @@
 output "dsde_config" {
+  sensitive = true
   value = {
     name                 = var.name
     location             = var.location
