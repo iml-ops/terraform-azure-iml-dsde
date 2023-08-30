@@ -24,3 +24,8 @@ variable "gateway_token" {
   type        = string
   description = "The token for the gateway."
 }
+
+variable "sensitve_scopes" {
+  type       = list(string)
+  description = "The list of scopes that should be considered sensitive and granted to Data Scientists only when authorized."
+}
