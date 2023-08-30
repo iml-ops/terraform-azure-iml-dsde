@@ -30,7 +30,7 @@ resource "azurerm_role_assignment" "rg_rbac_admin" {
 ## Sensitive Scopes
 resource "azurerm_role_assignment" "sensitive_scope" {
   for_each             = { for scope in var.sensitive_scopes : scope => scope }
-  scope                = scope.value
+  scope                = each.value
   role_definition_name = "Role Based Access Control Administrator (Preview)"
   principal_id         = azuread_service_principal.deployer.object_id
 }
